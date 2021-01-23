@@ -1,0 +1,460 @@
+﻿//This file is where you will place registry entries that are to be removed during setup of your application.
+
+// Hide other language node.
+[$RootKey$\NewProjectTemplates\PseudoFolders\{152CDB9D-B85A-4513-A171-245CE5C61FCC}]
+
+// Hide other project types node.
+[$RootKey$\NewProjectTemplates\PseudoFolders\{DCF2A94A-45B0-11D1-ADBF-00C04FB6BE4C}]
+
+[$RootKey$\NewProjectTemplates\TemplateDirs\{019971D6-4685-11D2-B48A-0000F87572EB}]
+
+[$RootKey$\NewProjectTemplates\TemplateDirs\{39c9c826-8ef8-4079-8c95-428f5b1c323f}]
+
+[$RootKey$\NewProjectTemplates\TemplateDirs\{BEB01DDF-9D2B-435B-A9E7-76557E2B6B52}]
+
+// Leave the blank solution project
+// [$RootKey$\NewProjectTemplates\TemplateDirs\{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}]
+
+[$RootKey$\Projects\{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}]
+
+[$RootKey$\Projects\{1d6d3185-e7ba-44a5-8dbe-00485ef28094}]
+
+// Uncomment to remove the Web Application Project Factory
+// [$RootKey$\Projects\{349C5851-65DF-11DA-9384-00065B846F21}]
+
+[$RootKey$\Projects\{349C5853-65Df-11DA-9384-00065B846F21}]
+
+[$RootKey$\Projects\{349C5854-65Df-11DA-9384-00065B846F21}]
+
+[$RootKey$\Projects\{5600DBA8-E3D8-42CB-B290-4CFFE16ACD2D}]
+
+[$RootKey$\Projects\{58839851-977a-4c1b-a0d3-79157d5f2bbf}]
+
+[$RootKey$\Projects\{60dc8134-eba5-43b8-bcc9-bb4bc16c2548}]
+
+[$RootKey$\Projects\{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}]
+
+[$RootKey$\Projects\{911E67C6-3D85-4fce-B560-20A9C3E3FF48}]
+
+// Hide web items.
+[$RootKey$\Projects\{A2FE74E1-B743-11d0-AE1A-00A0C90FFFC3}\AddItemTemplates\TemplateDirs\{F5E7E720-1401-11d1-883B-0000F87579D2}]
+
+// Hide script items.
+[$RootKey$\Projects\{A2FE74E1-B743-11d0-AE1A-00A0C90FFFC3}\AddItemTemplates\TemplateDirs\{39c9c826-8ef8-4079-8c95-428f5b1c323f}]
+
+[$RootKey$\Projects\{B11A6AD6-2D76-4C13-BDD7-78ED7004C364}]
+
+[$RootKey$\Projects\{D1DCDB85-C5E8-11D2-BFCA-00C04F990235}]
+
+[$RootKey$\Projects\{E502E3C0-BAAE-11D0-88BF-00A0C9110049}]
+
+[$RootKey$\Projects\{E6FDF86B-F3D1-11D4-8576-0002A516ECE8}]
+
+[$RootKey$\Projects\{F184B08F-C81C-45F6-A57F-5ABD9991F28F}]
+
+[$RootKey$\Projects\{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// The following lists the default packages that are included in the Visual Studio Isolated Shell.
+// By uncommenting the package key in this file, the package will not load when the Isolated Shell is launched.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// General Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Visual Studio Code Snippets Package
+// [$RootKey$\Packages\{0B680757-2C29-4531-80FA-535A5178AA98}] 
+
+// Start Page
+//$RootKey$\Packages\{0E13FC54-9231-410b-8B74-95689CD32627}]
+
+// XML Schema Designer
+// [$RootKey$\Packages\{20aaf8fa-14c0-4897-8ca0-4d861e2b1212}] 
+
+// Class Outline Package
+// [$RootKey$\Packages\{21af45b0-ffa5-11d0-b63f-00a0c922e851}] 
+
+// Toolbox Control Installer Package
+// [$RootKey$\Packages\{2c298b35-07da-45f1-96a3-be55d91c8d7a}] 
+
+// ToolBox Control Installer Package
+// [$RootKey$\Packages\{36839529-3AF3-47fa-8194-F4A3FA9F0ED7}] 
+
+// Visual Studio Help Package
+// [$RootKey$\Packages\{4A791146-19E4-11D3-B86B-00C04F79F802}] 
+
+// Visual Studio Task List Package
+// [$RootKey$\Packages\{4A9B7E50-AA16-11d0-A8C5-00A0C921A4D2}] 
+
+// Visual Studio Directory Listing Package
+// [$RootKey$\Packages\{5010C52F-44AB-4051-8CE1-D36C20D989B4}] 
+
+// Visual Studio Component Enumerator Package
+// [$RootKey$\Packages\{588205e0-66e0-11d3-8600-00c04f6123b3}] 
+
+// Visual Studio Binary Editor Package
+// [$RootKey$\Packages\{5B98C2C0-CD7B-11D0-92DF-00A0C9138C45}] 
+
+// Visual Studio Quick Search Package
+// [$RootKey$\Packages\{5CB51D20-CA1E-4b7e-94D9-CC3E77198E7A}] 
+
+// Visual Studio Settings and Project Designers Package
+// [$RootKey$\Packages\{67909B06-91E9-4F3E-AB50-495046BE9A9A}] 
+
+// Visual C++ Resource Editor Package
+// [$RootKey$\Packages\{74AAD8B2-3294-49CB-BB5D-E9BAB132BFD5}] 
+
+// ElementHost Designer Package
+// [$RootKey$\Packages\{7eab3c71-59ff-4571-a5f3-643f255fc2e6}] 
+
+// Visual Studio XML Editor Package
+// [$RootKey$\Packages\{87569308-4813-40a0-9cd0-d7a30838ca3f}] 
+
+// Visual Studio Explorers and Designers Package
+// This package is responsible for server explorer and "Tools->Connect to Server" and "Tools->Connect to Database" commands.
+// [$RootKey$\Packages\{8D8529D3-625D-4496-8354-3DAD630ECC1B}] 
+
+// MRU Data Source
+// [$RootKey$\Packages\{8ff5c2a8-5eba-4717-8ee1-46b6427d8ff3}] 
+
+// Visual Studio Web Browser Package
+// [$RootKey$\Packages\{e8b06f41-6d01-11d2-aa7d-00c04f990343}] 
+
+// Export Template Package
+// [$RootKey$\Packages\{f1e4cfca-4573-4345-8718-7bde2b1f0be8}] 
+
+// Text Management Package
+// [$RootKey$\Packages\{F5E7E720-1401-11d1-883B-0000F87579D2}] 
+
+// Microsoft.VsWizards.ImportProjectFolderWizard.NewProjectFromExistingPackage
+// [$RootKey$\Packages\{afa50ba6-e144-43c7-8cc2-2244793ef4e9}] 
+
+// Undefine this package to remove the VS menu item Help->Manage Visual Studio Performance
+// Microsoft.VisualStudio.PlatformUI.Diagnostics.DiagnosticsPackage
+[$RootKey$\Packages\{7d1a598c-4f97-4a83-a178-6b1bfcc7061e}]
+
+// Undefine this package to remove the VS menu item Help->Check for updates
+// Microsoft.VisualStudio.PlatformUI.SetupCompositionPackage
+[$RootKey$\Packages\{F92174FD-F10D-418B-819A-7433DEA53833}]
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Debugger Related Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Visual Studio Debugger Managed Package
+[$RootKey$\Packages\{BEB01DDF-9D2B-435B-A9E7-76557E2B6B52}] 
+
+// Visual Studio Debugger
+//[$RootKey$\Packages\{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}] 
+
+// Remove Debug from main menu toolbar 
+[$RootKey$\Menus]
+"{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}"=""
+
+// Microsoft.VisualStudio.Debugger.PdtDebug
+[$RootKey$\Packages\{D277DC8A-AA1E-4303-8C03-1C58DB18E98B}] 
+
+// "VSDebugCoreUI.ExceptionSettings.ExceptionSettingsToolWindow" tool window
+[$RootKey$\ToolWindows\{605322a2-17ae-43f4-b60f-766556e46c87}]
+
+// Disable VS Debug Core UI Package 
+[$RootKey$\Packages\{D549BC66-C17B-4409-8729-583E60DC0BC1}]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Data Related Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Visual Database Tools Package
+[$RootKey$\Packages\{220A4C17-7E7C-4663-BBCC-5E607C6543CD}] 
+
+// Visual Studio Data Designer Extensibility Package
+[$RootKey$\Packages\{A8F602E2-40CE-4daf-AE82-A457A91728B9}] 
+
+// Microsoft.VisualStudio.Data.Providers.SqlEverywhere.VsPackage
+[$RootKey$\Packages\{b65e9356-a4c7-4855-96bb-1d3ec8514e8f}] 
+
+// Visual Studio Data Designers
+[$RootKey$\Packages\{d6c919aa-1217-41e2-a13b-9b92e1866305}]
+[$RootKey$\KeyBindingTables\{4194fee5-6777-419f-a5fc-47a536df1bdb}]
+[$RootKey$\KeyBindingTables\{b2c40b32-3a37-4ca9-97b9-fa44248b69ff}]
+[$RootKey$\KeyBindingTables\{b968e165-98e0-41f0-8fbe-a8ed1d246a90}]
+[$RootKey$\KeyBindingTables\{cff78a9b-78a3-45a3-9142-0267afc261fa}]
+[$RootKey$\Menus]
+"{d6c919aa-1217-41e2-a13b-9b92e1866305}"=""
+
+// Visual Studio Data Package
+[$RootKey$\Packages\{E1AA7737-69BE-43d0-A425-E3097651E192}]
+[$RootKey$\Services\{06D0BE35-FA3A-4ef6-81B9-3EDBB68EF982}]
+[$RootKey$\Services\{4E406457-B0E6-4b94-BEB9-62069E6E4CD7}]
+[$RootKey$\Services\{58132988-8A5C-43c6-9ACF-6A688CDFF57A}]
+[$RootKey$\Services\{654C847E-E6ED-4217-9ABF-A6208631F73F}]
+[$RootKey$\Services\{65A105A2-16CA-4c6c-A84A-D882700A87EB}]
+[$RootKey$\Services\{69BD65B1-1C44-49c6-B83A-FB0353334545}]
+[$RootKey$\Services\{7D9EA559-68F0-4944-97E3-2795D4FF9730}]
+[$RootKey$\Services\{8CB5F787-2D74-459e-88D6-39E20A4D9454}]
+[$RootKey$\Services\{AB5F7D50-A307-46e6-A20C-ADDBF34C6771}]
+[$RootKey$\Services\{BCD55999-B818-4240-9528-3D96274477C9}]
+[$RootKey$\Services\{D2A95B42-57F9-4efd-B41F-0E198C6C1E45}]
+[$RootKey$\Services\{D77E81FC-873E-4283-A0F8-CF1CCE8CC42B}]
+[$RootKey$\Services\{D8D207DA-64EB-4b46-9740-282F5F458B22}]
+[$RootKey$\Services\{E663F492-4589-4f60-9CA5-022E59FA635B}]
+[$RootKey$\Services\{E7A0D4E0-D0E4-4afa-A8A1-DD4636073D98}]
+
+// Visual Studio Database Tools Designers
+[$RootKey$\Packages\{EF828E39-70F5-4b8e-A3A0-4C0ECD28A69A}]
+[$RootKey$\Services\{41AB5AA8-2511-4e96-A682-C30B0292C2EF}]
+[$RootKey$\Services\{80B8E778-AE06-471d-B1D0-618F7F710ECB}]
+
+// Microsoft Report Designer
+[$RootKey$\Packages\{F3A96850-E2AE-4e00-9278-8FE23F225A0D}]
+[$RootKey$\KeyBindingTables\{CB3675B8-701E-4f56-9167-2714E167FF3F}]
+[$RootKey$\Menus]
+"{F3A96850-E2AE-4e00-9278-8FE23F225A0D}"=""
+[$RootKey$\Services\{855D5105-E206-40f1-86B3-D9EA0C5A0F1F}]
+[$RootKey$\ToolWindows\{3FD5E0CC-709A-4f8c-94C3-7F0F8DFF5BB2}]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Web Specific Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Visual Studio HTM Editor Package
+[$RootKey$\Packages\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}] 
+
+// Microsoft.VisualStudio.Web.Application.WAPackage
+[$RootKey$\Packages\{349C5850-65DF-11DA-9384-00065B846F21}] 
+
+// Visual Web Developer Project System Package
+[$RootKey$\Packages\{39c9c826-8ef8-4079-8c95-428f5b1c323f}] 
+
+[$RootKey$\Menus]
+"{39c9c826-8ef8-4079-8c95-428f5b1c323f}"=""
+
+// Visual Web Developer Project Persistance Package
+[$RootKey$\Packages\{8FF02D1A-C177-4ac8-A62F-88FC6EA65F57}] 
+
+// Visual Studio CSS Editing Package
+// [$RootKey$\Packages\{A764E895-518D-11d2-9A89-00C04F79EFC3}] 
+
+// Visual Web Developer HTML Source Editor Package
+// [$RootKey$\Packages\{BFCC0C3C-6F87-4285-A6C8-BB616061800D}] 
+
+// Visual Web Developer Web Application Upgrade Package
+// [$RootKey$\Packages\{DC7F691A-91FC-4F7b-923E-FE829C3A18DC}] 
+
+// Visual Web Developer Web Package
+// [$RootKey$\Packages\{e7f851c8-6267-4794-b0fe-7bcab6dacbb4}] 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Source Control Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Visual SourceSafe Provider Stub Package
+//[$RootKey$\Packages\{53544C4D-B03D-4209-A7D0-D9DD13A4019B}] 
+
+// Visual Studio Source Control Integration Package
+//[$RootKey$\Packages\{53544C4D-E3F8-4AA0-8195-8A8D16019423}] 
+
+// Visual SourceSafe Provider Package
+//[$RootKey$\Packages\{AA8EB8CD-7A51-11D0-92C3-00A0C9138C45}] 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Domain Specific Language Packages
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Microsoft DSL Tools
+// [$RootKey$\Packages\{a9696de6-e209-414d-bbec-a0506fb0e924}] 
+
+// Microsoft.VisualStudio.Modeling.Integration.Shell.ModelBusPackage
+// [$RootKey$\Packages\{B7C8A95B-B8E4-4adb-9560-0F487D1429FB}] 
+
+// Microsoft.VisualStudio.DataDesign.SyncDesigner.DSL.SyncDesignerPackage
+// [$RootKey$\Packages\{c8afb2f4-bff7-4055-926d-d44afecd5832}] 
+
+// Microsoft.VisualStudio.Modeling.Shell.CommonModelingPackage (Microsoft DSL Tools)
+// [$RootKey$\Packages\{d1091694-ea72-4bdd-8918-78324cc25448}] 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Look under HKEY_CURRENT_USER\Software\Microsoft\SQL Server Management Studio\18.0_IsoShell_Config\Packages
+/// for the list of packages.
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// hide server explorer
+[$RootKey$\Packages\{198E76C1-34C0-424D-9957-B3EBD80265FB}]
+[$RootKey$\ServerExplorer]
+
+// hide Command Window - this does not seem to do anything
+[$RootKey$\ToolWindows\{28836128-FC2C-11D2-A433-00C04F72D18A}]
+
+// hide Visual Studio Solution Build Package  - this does not seem to do anything
+[$RootKey$\Packages\{282BD676-8B5B-11D0-8A34-00A0C91E2ACD}]
+
+// hide data source window
+[$RootKey$\ToolWindows\{873151D0-CF2E-48cc-B4BF-AD0394F6A3C3}]
+
+// object browser
+[$RootKey$\ToolWindows\{269A02DC-6AF8-11D3-BDC4-00C04F688E50}]
+
+// Start Page
+[$RootKey$\Packages\{0E13FC54-9231-410b-8B74-95689CD32627}]
+
+// Visual Studio HTM Editor Package
+[$RootKey$\Packages\{1B437D20-F8FE-11D2-A6AE-00104BCC7269}]
+
+// Microsoft.VisualStudio.XsdDesigner.Package.DesignerPackage
+[$RootKey$\Packages\{20aaf8fa-14c0-4897-8ca0-4d861e2b1212}]
+
+// Microsoft.VisualStudio.LanguageServices.TypeScript.TypeScriptPackage
+[$RootKey$\Packages\{2ffe45c4-5c73-493c-b187-f2e955ff875e}] 
+
+// Test Contracts Package
+[$RootKey$\Packages\{31038792-97E7-4B54-8764-B70ADD200F0E}]
+
+// Visual Web Developer Project System Package
+[$RootKey$\Packages\{39c9c826-8ef8-4079-8c95-428f5b1c323f}]
+
+// SourceExplorerPackage
+//[$RootKey$\Packages\{44692da9-c6f8-415b-9aae-924dd592dc7f}]
+
+// Visual Studio Help Package - do not remove this package or you won't be able to "Set Help Preferences", etc.."
+// [$RootKey$\Packages\{4A791146-19E4-11D3-B86B-00C04F79F802}]
+
+// XamlDesignerPackage
+[$RootKey$\Packages\{512be089-83ec-4cc6-8483-cf16565ae209}]
+
+// XamlLanguagePackage
+[$RootKey$\Packages\{2EF1EC52-C8BF-4FE0-8ECE-BA9C0D5D1603}]
+
+// Microsoft.VisualStudio.Debugger.Parallel.Gpu
+[$RootKey$\Packages\{52f5727d-fe3b-4812-80c4-6a8eebeab94f}]
+
+// Visual Studio Source Control Integration Package
+//[$RootKey$\Packages\{53544C4D-E3F8-4AA0-8195-8A8D16019423}]
+
+// VSTelemetryPackage
+// [$RootKey$\Packages\{54befe64-0558-4d8c-9fd5-ab0b54733b08}]
+
+// Visual Studio Settings and Project Designers Package
+[$RootKey$\Packages\{67909B06-91E9-4F3E-AB50-495046BE9A9A}]
+
+// Microsoft.VisualStudio.JavaScript.Project.JavaScriptProjectPackage, Microsoft.VisualStudio.JavaScript.Project, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+[$RootKey$\Packages\{7e89d1bd-0041-4382-9816-0e78fc502bed}]
+
+// Visual Studio XML Editor Package
+// [$RootKey$\Packages\{87569308-4813-40a0-9cd0-d7a30838ca3f}]
+
+// PerfWatson Event Provider Package
+[$RootKey$\Packages\{b466091b-94ad-416f-bb8a-42534d423a67}]
+
+// Visual Studio Build Manager Package
+[$RootKey$\Packages\{B718A162-0361-4b0e-920B-D88D70BE609B}]
+
+// User Feed
+[$RootKey$\Packages\{BB4BF712-FCF7-4D17-83BB-93E6478B4E5D}]
+
+// Microsoft.VisualStudio.JSLS.JavaScriptLanguageServicePackage, Microsoft.VisualStudio.JSLS, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+[$RootKey$\Packages\{d62c17c6-44b3-4e5d-b0aa-1c5536e979d9}]
+
+// Other Tools|Options not really used by SSMS
+[$RootKey$\ToolsOptionsPages\Debugger]
+[$RootKey$\ToolsOptionsPages\Environment\Task List]
+[$RootKey$\ToolsOptionsPages\Environment\ExtensionManager]
+[$RootKey$\ToolsOptionsPages\Projects\Build and Run]
+[$RootKey$\ToolsOptionsPages\Projects\NETCore]
+[$RootKey$\ToolsOptionsPages\Projects\Performance]
+[$RootKey$\ToolsOptionsPages\Projects\WebProjects]
+[$RootKey$\ToolsOptionsPages\Windows Forms Designer]
+[$RootKey$\ToolsOptionsPages\XAML Designer]
+[$RootKey$\ToolsOptionsPages\Source Control]
+[$RootKey$\ToolsOptionsPages\Web Forms Designer]
+[$RootKey$\ToolsOptionsPages\HTML Designer]
+[$RootKey$\ToolsOptionsPages\WindowsFormsDesigner]
+
+// Hide these languages from "Code Snippet Manager"
+[$RootKey$\Languages\CodeExpansions\HTML]
+[$RootKey$\Languages\CodeExpansions\Javascript]
+[$RootKey$\Languages\CodeExpansions\TypeScript]
+[$RootKey$\Languages\CodeExpansions\XAML]
+[$RootKey$\Languages\CodeExpansions\XML]
+
+
+//
+// Hide most of the stuff defined in Microsoft.VisualStudio.Shell.Connected.pkgdef
+// which are not applicable to SSMS. Specifically the "Accounts" and the
+// "RoamingSettings".
+//
+// Note: we keep "Tools | Options | Environment | Trust Settings", though.
+[$RootKey$\Packages\{B22490B8-AA51-43B1-97EE-509A33B681F3}]
+[$RootKey$\Services\{33024F95-187C-4F15-AA48-38D05C1E8B58}]
+[$RootKey$\Packages\{5e80a5a1-b722-4727-9015-148aab6310b0}]
+[$RootKey$\Services\{33024F95-187C-4F15-AA48-38D05C1E8B58}]
+[$RootKey$\Packages\{7F679D93-2EB6-47C9-85EB-F6AD16902662}]
+[$RootKey$\Services\{09446ADE-6B3C-4A4D-9B97-61F49BEB75CE}]
+[$RootKey$\Packages\{A5C25D8F-4D74-4924-BD8C-F3C2B860F4EC}]
+[$RootKey$\Services\{A1CD5C77-DE7C-4999-938D-EF5BB235AD95}]
+[$RootKey$\Packages\{B22490B8-AA51-43B1-97EE-509A33B681F3}]
+[$RootKey$\Services\{0BB1FA06-C83E-4EAA-99AF-0B67B2D8F90B}]
+[$RootKey$\Services\{A024CF30-99C0-427B-ADEE-E2AD5F8AA1C3}]
+[$RootKey$\Services\{B22490B8-AA51-43B1-97EE-509A33B681F3}]
+[$RootKey$\Packages\{C194969A-A5B1-4AF2-A9DF-ECF7CE982A05}]
+[$RootKey$\Packages\{54888390-2C04-4B04-B451-3166730C75BA}]
+[$RootKey$\Services\{8EE137B5-F516-450C-8237-CBB7E5E26422}]
+[$RootKey$\Settings\Microsoft.VisualStudio.RoamingEnabled]
+[$RootKey$\Packages\{90F04B5C-C9EB-46f2-8E89-34A07A998826}]
+[$RootKey$\Services\{7D8217EC-77D2-4ffa-BD70-01BC18D6906A}]
+[$RootKey$\Packages\{9C987E78-F0BF-45CA-9BA5-96D3E4B2BAC6}]
+[$RootKey$\Services\{231E1BD9-EECC-4E16-9FCA-A1D24A20EE71}]
+[$RootKey$\ToolsOptionsPages\Environment\Accounts]
+[$RootKey$\ToolsOptionsPages\Environment\RoamingSettings]
+
+//
+// Hide the "Notification" options and menus.
+// which are not applicable to SSMS.
+//
+[$RootKey$\Packages\{b89cd7d2-19db-4b60-a958-e882ae71a66e}]
+[$RootKey$\Services\{FB09B722-3B89-406A-824D-0F6B105DD2AF}]
+[$RootKey$\ToolsOptionsPages\Environment\Notifications]
+
+// ********
+// Remove unused language services
+// Note: the XAML, ResJSON, and TypeScript lines make
+//       those items disappear from Tools | Options | Text Editor
+[$RootKey$\Languages\Language Services\Basic]
+[$RootKey$\Languages\Language Services\CSS]
+[$RootKey$\Languages\Language Services\HTML]
+[$RootKey$\Languages\Language Services\JScript]
+[$RootKey$\Languages\Language Services\PL/SQL]
+[$RootKey$\Languages\Language Services\RDL Expression]
+[$RootKey$\Languages\Language Services\SQL Script]
+[$RootKey$\Languages\Language Services\T-SQL]
+[$RootKey$\Languages\Language Services\T-SQL7]
+[$RootKey$\Languages\Language Services\T-SQL80]
+[$RootKey$\Languages\Language Services\T-SQL90]
+[$RootKey$\Languages\Language Services\XAML]
+[$RootKey$\Languages\Language Services\ResJSON]
+[$RootKey$\Languages\Language Services\TypeScript]
+
+
+// ********
+// Remove unused fonts and colors
+// ********
+[$RootKey$\FontAndColors\XAML Designer]
+[$RootKey$\FontAndColors\AllDebuggerVarWnds]
+[$RootKey$\FontAndColors\Autos]
+[$RootKey$\FontAndColors\CallStack]
+[$RootKey$\FontAndColors\DebugLocation]
+[$RootKey$\FontAndColors\DataTips]
+[$RootKey$\FontAndColors\Immediate Window]
+[$RootKey$\FontAndColors\Locals]
+[$RootKey$\FontAndColors\Memory]
+[$RootKey$\FontAndColors\Parallel Stacks]
+[$RootKey$\FontAndColors\Parallel Tasks]
+[$RootKey$\FontAndColors\Parallel Watch]
+[$RootKey$\FontAndColors\Performance Tips]
+[$RootKey$\FontAndColors\Registers]
+[$RootKey$\FontAndColors\Threads]
+[$RootKey$\FontAndColors\Watch]
+
+// Remove Dark theme
+//[$RootKey$\Themes\{1ded0138-47ce-435e-84ef-9ec1f439b749}]
