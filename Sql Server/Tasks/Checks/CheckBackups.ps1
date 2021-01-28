@@ -1,12 +1,13 @@
 ﻿# CREATE FUNCTION
-Function CheckDbs
+Function CheckBackups
 {
 # IMPORT INSTANCE LIST
 
-clear
-$instances1 = Import-CSV "C:\DBAChecks\InstancesLivNetbackupFailOver.csv" 
 
-#$instances1.target_name
+# list from CSV
+clear
+$instances1 = Import-CSV "C:\DBAChecks\SIngle\RHEBIW2K161_RHESQLBI01.csv" 
+
 ##################################################################
 
 # LOOP THROUGH CREATE RESULTS ARRAY
@@ -21,7 +22,7 @@ $instances1 = Import-CSV "C:\DBAChecks\InstancesLivNetbackupFailOver.csv"
 ##################################################################
 
 # FORMATING 
-$LastBackup | Format-Table
+#$LastBackup | Format-Table
 
  
 ######################################################################
@@ -29,13 +30,13 @@ $LastBackup | Format-Table
 
 Remove-Variable instances1
 #Remove-Variable LastBackup
-##################################################################REPEAT
+##################################################################REPEATy
 
 }
-$confirmation = Read-Host "This script will check all databases and instances? [y/n]"
+$confirmation = Read-Host "This script will check all databases and instances in your list? [y/n]"
 while($confirmation -ne "n" ) 
 {   
-CheckDbs
+CheckBackups
          $confirmation = Read-Host "Check again? [y/n]"
             while ($confirmation -ne 'y') {exit}
 
