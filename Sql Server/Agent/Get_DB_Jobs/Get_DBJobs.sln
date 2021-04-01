@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "DeployYourScript", "DeployYourScript\DeployYourScript.dtproj", "{91D39875-3F80-4898-A5B2-3637665BD017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91D39875-3F80-4898-A5B2-3637665BD017}.Development|Default.ActiveCfg = Development
+		{91D39875-3F80-4898-A5B2-3637665BD017}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2916A9C-20F6-4792-8D9C-E539381F8877}
+	EndGlobalSection
+EndGlobal
