@@ -1,0 +1,1768 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/14/2019 10:32:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NCC48860LT"
+  DTS:CreatorName="NCCAD\gwinte"
+  DTS:DTSID="{212F7A1C-5FA3-4AB2-81B7-F605EE627EAB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Get_DBJobs"
+  DTS:PackageType="5"
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{458D88F2-68C9-4DAE-B484-B762A4B59011}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Get_ConfigData]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F5853066-2A87-411E-A8A2-73E890935DCD}"
+      DTS:ObjectName="Get_ConfigData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NCCSQL17DBALIS;Initial Catalog=DBREPORTS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[varconnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{74B2D666-4762-4DC9-9315-BE09DD440A14}"
+      DTS:ObjectName="varconnection">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::ConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=NCCSQLDEVW2K161\NCCSQL2017DBA01;Initial Catalog=master;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3559CA0D-0F5E-4CFB-B717-D3D271E4F136}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnectionC">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3049C647-3F8B-4A60-BC55-1B765374CB2E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Connections">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C6D4E003-6499-4602-A8A9-0CD4DB8A0BEC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Connectionsb">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CD73D365-1BE8-4D87-BA0A-FF4871355D3F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::ConnectionString]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">NCCSQLDEVW2K161\NCCSQL2017DBA01</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F71799E3-C850-48AD-A052-DEF9888F9DC1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::ConnectionStringb]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnectionStringb">
+      <DTS:VariableValue
+        DTS:DataType="8">NCCSQLTSTW2K123\SQLTST2K8R2STD</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0156E4F2-4541-4E72-9F94-95D8B98FC979}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::ConnectionStringc]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnectionStringc">
+      <DTS:VariableValue
+        DTS:DataType="8">NCCSQLW2K162\NCCSQL2017LIV01</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{C5FEC93B-1BB1-4B26-A747-12ED030AA9B0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MISSING_JOB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Get_ConfigData]"
+                  connectionManagerRefId="Package.ConnectionManagers[Get_ConfigData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[target_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="target_name"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[target_name]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MISSING]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="51"
+                      cachedName="MISSING"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MISSING]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MISSING]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="target_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MISSING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="51"
+                      name="MISSING" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">use DBREPORTS
+SELECT *
+
+FROM 
+(select  target_name, 'MISSING DatabaseBackup - SYSTEM_DATABASES - FULL' MISSING
+from dbreports.ConfigData.TargetInstances ti
+WHERE target_name NOT IN (
+SELECT SRVNAME FROM DBREPORTS.dbo.dbagentjobs
+ WHERE JOBNAME in ('DatabaseBackup - SYSTEM_DATABASES - FULL')					
+															   )
+AND TI.KnowStatus = 'ACTIVE'
+union
+select  target_name, 'MISSING DatabaseBackup - USER_DATABASES - DIFF' MISSING
+from dbreports.ConfigData.TargetInstances ti
+WHERE target_name NOT IN (
+SELECT SRVNAME FROM DBREPORTS.dbo.dbagentjobs
+ WHERE JOBNAME in ('DatabaseBackup - USER_DATABASES - DIFF')															   )
+AND TI.KnowStatus = 'ACTIVE'
+union
+select  target_name, 'MISSING DatabaseBackup - USER_DATABASES - FULL' MISSING
+from dbreports.ConfigData.TargetInstances ti
+WHERE target_name NOT IN (
+SELECT SRVNAME FROM DBREPORTS.dbo.dbagentjobs
+ WHERE JOBNAME in ('DatabaseBackup - USER_DATABASES - FULL')															   )
+AND TI.KnowStatus = 'ACTIVE'
+union
+select  target_name, 'MISSING DatabaseBackup - USER_DATABASES - LOG' MISSING
+from dbreports.ConfigData.TargetInstances ti
+WHERE target_name NOT IN (
+SELECT SRVNAME FROM DBREPORTS.dbo.dbagentjobs
+ WHERE JOBNAME in ('DatabaseBackup - USER_DATABASES - LOG')															   )
+AND TI.KnowStatus = 'ACTIVE'
+union
+select  target_name, 'MISSING DatabaseBackup - Netbackup tranact Trunc V2' MISSING
+from dbreports.ConfigData.TargetInstances ti
+WHERE target_name NOT IN (
+SELECT SRVNAME FROM DBREPORTS.dbo.dbagentjobs
+ WHERE JOBNAME in ('DatabaseBackup - Netbackup tranact Trunc V2')															   )
+AND TI.KnowStatus = 'ACTIVE'
+) A</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Get_ConfigData]"
+                  connectionManagerRefId="Package.ConnectionManagers[Get_ConfigData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[target_name]"
+                      length="100"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]"
+                      name="target_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MISSING]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MISSING]"
+                      length="51"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MISSING]"
+                      name="MISSING"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="target_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MISSING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="51"
+                      name="MISSING" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target_name]"
+                      name="target_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MISSING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="51"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MISSING]"
+                      name="MISSING" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get_Instances"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{80D06642-3066-4F8C-8F16-ACD85F37E4C8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="10000"
+      DTS:ObjectName="Get_Instances"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Get_Instances\Loop1Data"
+              componentClassID="Microsoft.RecordsetDestination"
+              contactInfo="Recordset Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an in-memory ADO recordset that is available outside of the data flow. Scripts and other package elements can use the recordset. For example, use a recordset to store the names of files that will be loaded into the data warehouse."
+              name="Loop1Data">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the recordset."
+                  name="VariableName">User::Connections</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get_Instances\Loop1Data.Inputs[Recordset Destination Input]"
+                  hasSideEffects="true"
+                  name="Recordset Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get_Instances\Loop1Data.Inputs[Recordset Destination Input].Columns[target_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="target_name"
+                      lineageId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Get_Instances\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ConfigData].[TargetInstances]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">use DBREPORTS
+SELECT [target_name]
+  FROM [DBREPORTS].[ConfigData].[TargetInstances]
+  where [KnowStatus] = 'ACTIVE'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Get_Instances\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Get_ConfigData]"
+                  connectionManagerRefId="Package.ConnectionManagers[Get_ConfigData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[target_name]"
+                      length="80"
+                      lineageId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output].Columns[target_name]"
+                      name="target_name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="target_name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[target_name]"
+                      name="target_name" />
+                    <outputColumn
+                      refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Get_Instances.Paths[OLE DB Source Output]"
+              endId="Package\Get_Instances\Loop1Data.Inputs[Recordset Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Get_Instances\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop_through_Connections"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:DelayValidation="True"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{B7E8A79F-F0BB-4EE8-A101-35A6847C1BE1}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:MaxErrorCount="10000"
+      DTS:ObjectName="Loop_through_Connections">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{541B1CDD-3F66-41DC-92F9-91265B54BC7E}"
+        DTS:ObjectName="{541B1CDD-3F66-41DC-92F9-91265B54BC7E}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::Connections" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop_through_Connections\Get_BackupData"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E36E0516-1814-40CD-8CC9-02811B6F82D1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get_BackupData"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Get_backup_data"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">use msdb
+
+select 
+		@@SERVERNAME InstanceName , 
+		j.name JobName,
+		j.job_id,
+		j.description JobDescription,
+		sl.loginname,
+		j.date_created,
+		j.date_modified,
+		sh.last_run_date,
+		j.enabled,
+		sh.run_status run_status_id,
+	CASE	sh.run_status
+	WHEN 0 THEN 'Failed'
+	WHEN 1 THEN 'Success'
+	WHEN 2 THEN 'Retry'
+	WHEN 3 THEN 'Cancelled'
+	WHEN 4 THEN 'In Progress'
+	END AS Run_Status,
+		j.version_number, 
+		j.category_id,
+		c.name category
+
+	from dbo.sysjobs j
+	join dbo.syscategories c on j.category_id = c.category_id
+	left join sys.syslogins sl on j.owner_sid = sl.sid 
+	left join (select distinct  job_id,  max(instance_id) last_run_id from dbo.sysjobhistory
+where step_id = 0
+group by job_id, step_name) mxJ on j.job_id = mxJ.job_id
+Left join (select distinct instance_id, run_status,  max(run_date) last_run_date from dbo.sysjobhistory where step_id = 0
+		group by instance_id, run_status) sh on  mxJ.last_run_id = sh.instance_id
+--where j.name = 'checkbackups'
+order by JobName
+;
+select distinct  job_id,  max(instance_id) last_run_id from dbo.sysjobhistory
+where step_id = 0
+group by job_id, step_name</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[varconnection]"
+                      connectionManagerRefId="Package.ConnectionManagers[varconnection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[Run_Status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[Run_Status]"
+                          length="9"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[Run_Status]"
+                          name="Run_Status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[enabled]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[enabled]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[enabled]"
+                          name="enabled"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_created]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[date_created]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_created]"
+                          name="date_created"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_modified]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[date_modified]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_modified]"
+                          name="date_modified"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[InstanceName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[InstanceName]"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[InstanceName]"
+                          name="InstanceName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[JobName]"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobName]"
+                          name="JobName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[job_id]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[job_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[job_id]"
+                          name="job_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[JobDescription]"
+                          length="512"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobDescription]"
+                          name="JobDescription"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[loginname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[loginname]"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[loginname]"
+                          name="loginname"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[last_run_date]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[last_run_date]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[last_run_date]"
+                          name="last_run_date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[run_status_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[run_status_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[run_status_id]"
+                          name="run_status_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[version_number]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[version_number]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[version_number]"
+                          name="version_number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category_id]"
+                          name="category_id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category]"
+                          name="category"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[Run_Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="Run_Status" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[enabled]"
+                          dataType="ui1"
+                          name="enabled" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[date_created]"
+                          dataType="dbTimeStamp"
+                          name="date_created" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[date_modified]"
+                          dataType="dbTimeStamp"
+                          name="date_modified" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[InstanceName]"
+                          dataType="wstr"
+                          length="128"
+                          name="InstanceName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[JobName]"
+                          dataType="wstr"
+                          length="128"
+                          name="JobName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[job_id]"
+                          dataType="guid"
+                          name="job_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[JobDescription]"
+                          dataType="wstr"
+                          length="512"
+                          name="JobDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[loginname]"
+                          dataType="wstr"
+                          length="128"
+                          name="loginname" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[last_run_date]"
+                          dataType="i4"
+                          name="last_run_date" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[run_status_id]"
+                          dataType="i4"
+                          name="run_status_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[version_number]"
+                          dataType="i4"
+                          name="version_number" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                          dataType="i4"
+                          name="category_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].ExternalColumns[category]"
+                          dataType="wstr"
+                          length="128"
+                          name="category" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[InstanceName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[InstanceName]"
+                          name="InstanceName" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[JobName]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[JobName]"
+                          name="JobName" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[job_id]"
+                          dataType="guid"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[job_id]"
+                          name="job_id" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[JobDescription]"
+                          dataType="wstr"
+                          length="512"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[JobDescription]"
+                          name="JobDescription" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[loginname]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[loginname]"
+                          name="loginname" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[Run_Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[Run_Status]"
+                          name="Run_Status" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[enabled]"
+                          dataType="ui1"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[enabled]"
+                          name="enabled" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[last_run_date]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[last_run_date]"
+                          name="last_run_date" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[date_created]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[date_created]"
+                          name="date_created" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[run_status_id]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[run_status_id]"
+                          name="run_status_id" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[date_modified]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[date_modified]"
+                          name="date_modified" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[version_number]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[version_number]"
+                          name="version_number" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                          name="category_id" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[category]"
+                          dataType="wstr"
+                          length="128"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[category]"
+                          name="category" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert_dbAgentJobs"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[dbAgentJobs]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Get_ConfigData]"
+                      connectionManagerRefId="Package.ConnectionManagers[Get_ConfigData]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[Run_Status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="Run_Status"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[Run_Status]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[Run_Status]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[enabled]"
+                          cachedDataType="ui1"
+                          cachedName="enabled"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[enabled]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[enabled]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[date_created]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="date_created"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[date_created]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_created]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[date_modified]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="date_modified"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[date_modified]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[date_modified]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[InstanceName]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="InstanceName"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[InstanceName]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[InstanceName]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[JobName]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="JobName"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[JobName]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobName]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[job_id]"
+                          cachedDataType="guid"
+                          cachedName="job_id"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[job_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[job_id]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[JobDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="512"
+                          cachedName="JobDescription"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[JobDescription]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[JobDescription]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[loginname]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="loginname"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[loginname]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[loginname]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[last_run_date]"
+                          cachedDataType="i4"
+                          cachedName="last_run_date"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[last_run_date]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[last_run_date]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[run_status_id]"
+                          cachedDataType="i4"
+                          cachedName="run_status_id"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[run_status_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[run_status_id]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[version_number]"
+                          cachedDataType="i4"
+                          cachedName="version_number"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[version_number]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[version_number]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[category_id]"
+                          cachedDataType="i4"
+                          cachedName="category_id"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category_id]" />
+                        <inputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].Columns[category]"
+                          cachedDataType="wstr"
+                          cachedLength="128"
+                          cachedName="category"
+                          externalMetadataColumnId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output].Columns[category]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[InstanceName]"
+                          dataType="wstr"
+                          length="128"
+                          name="InstanceName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[JobName]"
+                          dataType="wstr"
+                          length="128"
+                          name="JobName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[job_id]"
+                          dataType="guid"
+                          name="job_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[JobDescription]"
+                          dataType="wstr"
+                          length="512"
+                          name="JobDescription" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[loginname]"
+                          dataType="wstr"
+                          length="128"
+                          name="loginname" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[date_created]"
+                          dataType="dbTimeStamp"
+                          name="date_created" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[date_modified]"
+                          dataType="dbTimeStamp"
+                          name="date_modified" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[last_run_date]"
+                          dataType="i4"
+                          name="last_run_date" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[enabled]"
+                          dataType="ui1"
+                          name="enabled" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[run_status_id]"
+                          dataType="i4"
+                          name="run_status_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[Run_Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="Run_Status" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[version_number]"
+                          dataType="i4"
+                          name="version_number" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[category_id]"
+                          dataType="i4"
+                          name="category_id" />
+                        <externalMetadataColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                          dataType="wstr"
+                          length="128"
+                          name="category" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Loop_through_Connections\Get_BackupData.Paths[OLE DB Source Output]"
+                  endId="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Loop_through_Connections\Get_BackupData\Get_backup_data.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{359B1167-63C2-49B7-A635-3D7EF47AE659}"
+          DTS:ObjectName="{359B1167-63C2-49B7-A635-3D7EF47AE659}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::ConnectionString" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TruncateTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{75051448-23F1-41C5-8201-43F40EB658FD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TruncateTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F5853066-2A87-411E-A8A2-73E890935DCD}"
+          SQLTask:SqlStatementSource="truncate table [DBREPORTS].[dbo].[dbAgentJobs]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TruncateTable 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{921141f3-ed8e-42c7-821b-bfa432586fbb}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TruncateTable 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F5853066-2A87-411E-A8A2-73E890935DCD}"
+          SQLTask:SqlStatementSource="truncate table [DBREPORTS].DBO.MISSING_JOB&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{424CD4C1-EEF3-49A0-B9CE-78CD762BDBC1}"
+      DTS:From="Package\Get_Instances"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loop_through_Connections" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CE26D58B-356C-44C5-81F6-3AF04113F01F}"
+      DTS:From="Package\TruncateTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get_Instances" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E295F83-59D3-4638-88F1-2A9CBF5CF909}"
+      DTS:From="Package\TruncateTable 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{5112272A-5F63-4727-9DCE-1377D7DD1E52}"
+      DTS:From="Package\Loop_through_Connections"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\TruncateTable 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{9CF32EE6-05C0-4FEA-AD26-082B5F29A12F}"
+      DTS:EventID="339793140"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{7CE18202-0DFF-419E-9D4D-9215D0F1EAFC}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables />
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="734,621" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Get_Instances"
+          TopLeft="728.5,90.25" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Loop_through_Connections\Get_BackupData"
+          TopLeft="94,43" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="377,176"
+          Size="377,219"
+          Id="Package\Loop_through_Connections"
+          TopLeft="609.82142857143,258.25" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\TruncateTable"
+          TopLeft="714,0" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\TruncateTable 1"
+          TopLeft="731.82142857143,542" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="799.910714285715,132.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,126"
+              Start="0,0"
+              End="0,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="787,42">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,48.25"
+              Start="0,0"
+              End="14.5,40.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.125"
+                    Point2="0,24.125"
+                    Point3="4,24.125" />
+                  <mssgle:LineSegment
+                    End="10.5,24.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,24.125"
+                    Point2="14.5,24.125"
+                    Point3="14.5,28.125" />
+                  <mssgle:LineSegment
+                    End="14.5,40.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="807.160714285715,584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="801.57142857143,477.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.75"
+              Start="0,0"
+              End="0,57.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="616,121" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="608,251" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="692.25,163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Get_Instances">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Get_Instances\OLE DB Source"
+          TopLeft="275,60" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Get_Instances\Loop1Data"
+          TopLeft="263,170" />
+        <EdgeLayout
+          Id="Package\Get_Instances.Paths[OLE DB Source Output]"
+          TopLeft="351,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23,68"
+              Start="0,0"
+              End="-23,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="-4,34" />
+                  <mssgle:LineSegment
+                    End="-19,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19,34"
+                    Point2="-23,34"
+                    Point3="-23,38" />
+                  <mssgle:LineSegment
+                    End="-23,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get_Instances\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Loop_through_Connections\Get_BackupData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs"
+          TopLeft="699,247" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Loop_through_Connections\Get_BackupData\Get_backup_data"
+          TopLeft="701,119" />
+        <EdgeLayout
+          Id="Package\Loop_through_Connections\Get_BackupData.Paths[OLE DB Source Output]"
+          TopLeft="783.5,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop_through_Connections\Get_BackupData\Get_backup_data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop_through_Connections\Get_BackupData\Insert_dbAgentJobs">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
