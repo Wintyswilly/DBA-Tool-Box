@@ -1,0 +1,4 @@
+USE [DATABASE_NAME_HERE]
+GO
+
+EXEC sp_msforeachtable 'DROP TABLE ?'
